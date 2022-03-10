@@ -91,5 +91,10 @@ def signup():
                 flash("Sorry, please try to shorten your name and email to less than 135 characters.")
             else:
                 send_sms_via_email(number=number, message=message, provider=provider, sender_credentials=sender_credentials)
-                return redirect(url_for('signup'))
+                return redirect(url_for('success'))
     return render_template('signup.html')
+
+# noinspection PyRedundantParentheses
+@app.route('/success', methods=['GET'])
+def success():
+    return render_template('success.html')
