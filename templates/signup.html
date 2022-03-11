@@ -2,8 +2,22 @@
 <html lang="en" style="background-color:tomato;">
 <head>
     <body>
-    <h1 style="background-color:teal;">Sign Up For The JNF Chat Group Web Form</h1>
-    <form method="post">
+<div class="container-fluid" style="min-height:100%">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{message}}
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+    <h1 style="background-color:teal; border=blue;border-width:10px; border-style:outset">Sign Up For The JNF Chat Group Web Form</h1>
+    <form method="post" style="background-color:teal; border=green; border-width:5px; border-style:solid">
         <label for="fname">First Name</label>
         <br>
         <input type="text" name="fname" id="fname"

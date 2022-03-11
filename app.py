@@ -81,6 +81,7 @@ def signup():
         print(fname, lname, contact)
         if not fname:
             flash('First Name is required')
+
         elif not lname:
             flash('Last Name Is Required')
         elif not contact:
